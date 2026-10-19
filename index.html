@@ -17,6 +17,7 @@
     --ink-soft:#4a544d;
     --ink-faint:#7f857c;
     --green:#1f3d30;
+    --green-text:#1f3d30;
     --green-ink:#f6f1e6;
     --wine:#6e1f2b;
     --brass:#a48650;
@@ -30,14 +31,14 @@
     :root:not([data-theme="light"]){
       --paper:#141b17; --paper-2:#1a231e; --card:#18201b;
       --ink:#ece5d6; --ink-soft:#bdb6a7; --ink-faint:#8d8a80;
-      --green:#2c5242; --green-ink:#f6f1e6; --wine:#c27a83; --brass:#c4a66e;
+      --green:#2c5242; --green-text:#a9c9b6; --green-ink:#f6f1e6; --wine:#c27a83; --brass:#c4a66e;
       --rule:rgba(236,229,214,.16); --rule-strong:rgba(236,229,214,.4);
     }
   }
   :root[data-theme="dark"]{
     --paper:#141b17; --paper-2:#1a231e; --card:#18201b;
     --ink:#ece5d6; --ink-soft:#bdb6a7; --ink-faint:#8d8a80;
-    --green:#2c5242; --green-ink:#f6f1e6; --wine:#c27a83; --brass:#c4a66e;
+    --green:#2c5242; --green-text:#a9c9b6; --green-ink:#f6f1e6; --wine:#c27a83; --brass:#c4a66e;
     --rule:rgba(236,229,214,.16); --rule-strong:rgba(236,229,214,.4);
   }
 
@@ -84,7 +85,7 @@
   .hero{padding-block:clamp(56px,9vw,112px) clamp(40px,6vw,72px);text-align:center}
   .hero .label{display:block;margin-bottom:28px}
   .hero h1{font-size:clamp(2.6rem,6.6vw,5.2rem);line-height:1.04;font-weight:400}
-  .hero h1 em{color:var(--green)}
+  .hero h1 em{color:var(--green-text)}
   .ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin:34px auto;color:var(--brass);max-width:300px}
   .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:var(--brass);opacity:.7}
   .ornament span{font-size:.8rem;letter-spacing:.3em}
@@ -176,7 +177,7 @@
   .about .prose p{margin:0 0 18px;color:var(--ink-soft)}
   .about .prose p:first-child::first-letter{
     font-family:var(--serif-display);float:left;font-size:4.4rem;line-height:.82;
-    padding:6px 10px 0 0;color:var(--green);
+    padding:6px 10px 0 0;color:var(--green-text);
   }
   .skills{border:1px solid var(--rule-strong);padding:30px;background:var(--card)}
   .skills h3{font-size:1.4rem;font-style:italic;margin-bottom:6px}
