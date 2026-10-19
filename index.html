@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asma Ammouri — Data Scientist & Data Analyst</title>
+<meta name="description" content="Asma Ammouri — Data Scientist & Data Analyst. Geospatial data, climate and natural risk. Thirteen years of geological engineering, now applied to machine learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e6;
+    --paper-2:#efe8d8;
+    --card:#fbf8f1;
+    --ink:#1d2621;
+    --ink-soft:#4a544d;
+    --ink-faint:#7f857c;
+    --green:#1f3d30;
+    --green-ink:#f6f1e6;
+    --wine:#6e1f2b;
+    --brass:#a48650;
+    --rule:rgba(29,38,33,.18);
+    --rule-strong:rgba(29,38,33,.45);
+    --serif-display:'Cormorant Garamond', 'Times New Roman', serif;
+    --serif:'EB Garamond', Georgia, serif;
+    --label:'Jost', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#141b17; --paper-2:#1a231e; --card:#18201b;
+      --ink:#ece5d6; --ink-soft:#bdb6a7; --ink-faint:#8d8a80;
+      --green:#2c5242; --green-ink:#f6f1e6; --wine:#c27a83; --brass:#c4a66e;
+      --rule:rgba(236,229,214,.16); --rule-strong:rgba(236,229,214,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#141b17; --paper-2:#1a231e; --card:#18201b;
+    --ink:#ece5d6; --ink-soft:#bdb6a7; --ink-faint:#8d8a80;
+    --green:#2c5242; --green-ink:#f6f1e6; --wine:#c27a83; --brass:#c4a66e;
+    --rule:rgba(236,229,214,.16); --rule-strong:rgba(236,229,214,.4);
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.6;
+    padding-inline:16px;
+  }
+  a{color:inherit}
+  ::selection{background:var(--green);color:var(--green-ink)}
+  :focus-visible{outline:1px solid var(--wine);outline-offset:4px}
+  .wrap{max-width:1080px;margin-inline:auto}
+  .label{
+    font-family:var(--label); font-size:.7rem; font-weight:500;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--ink-faint);
+  }
+  .num{font-variant-numeric:oldstyle-nums proportional-nums}
+  h1,h2,h3{font-family:var(--serif-display);font-weight:500;margin:0;text-wrap:balance;letter-spacing:-.005em}
+  em{font-style:italic}
+
+  /* ---------- top ---------- */
+  .top{
+    max-width:1080px; margin-inline:auto; display:flex; align-items:center;
+    justify-content:space-between; gap:20px; padding-block:26px;
+    border-bottom:1px solid var(--rule);
+  }
+  .crest{display:flex;align-items:center;gap:14px;text-decoration:none}
+  .monogram{
+    width:46px;height:46px;border:1px solid var(--brass);border-radius:50%;
+    display:grid;place-items:center;font-family:var(--serif-display);
+    font-style:italic;font-size:1.15rem;color:var(--ink);position:relative;
+  }
+  .monogram::after{content:"";position:absolute;inset:3px;border:1px solid var(--rule);border-radius:50%}
+  .crest .name{font-family:var(--label);font-size:.74rem;letter-spacing:.3em;text-transform:uppercase}
+  .top nav ul{list-style:none;display:flex;gap:30px;margin:0;padding:0}
+  .top nav a{font-family:var(--label);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft)}
+  .top nav a:hover{color:var(--wine)}
+  @media (max-width:720px){.top nav{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:clamp(56px,9vw,112px) clamp(40px,6vw,72px);text-align:center}
+  .hero .label{display:block;margin-bottom:28px}
+  .hero h1{font-size:clamp(2.6rem,6.6vw,5.2rem);line-height:1.04;font-weight:400}
+  .hero h1 em{color:var(--green)}
+  .ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin:34px auto;color:var(--brass);max-width:300px}
+  .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:var(--brass);opacity:.7}
+  .ornament span{font-size:.8rem;letter-spacing:.3em}
+  .hero .lede{max-width:60ch;margin:0 auto;color:var(--ink-soft);font-size:1.12rem}
+  .cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:38px}
+  .btn{
+    display:inline-block;padding:14px 28px;font-family:var(--label);font-size:.72rem;
+    letter-spacing:.24em;text-transform:uppercase;text-decoration:none;
+    border:1px solid var(--ink);color:var(--ink);transition:background .2s,color .2s;
+  }
+  .btn:hover{background:var(--ink);color:var(--paper)}
+  .btn.solid{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+  .btn.solid:hover{background:var(--ink);border-color:var(--ink)}
+
+  /* ---------- particulars ---------- */
+  .particulars{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong);
+    margin-bottom:96px;
+  }
+  .particulars div{padding:28px 20px;text-align:center}
+  .particulars div + div{border-left:1px solid var(--rule)}
+  .particulars b{display:block;font-family:var(--serif-display);font-weight:500;font-size:2.3rem;line-height:1.1}
+  .particulars span{display:block;margin-top:8px;font-family:var(--label);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+  @media (max-width:760px){
+    .particulars{grid-template-columns:repeat(2,1fr)}
+    .particulars div:nth-child(3){border-left:none}
+    .particulars div:nth-child(n+3){border-top:1px solid var(--rule)}
+  }
+
+  section{margin-bottom:110px}
+  .sec-head{text-align:center;margin-bottom:52px}
+  .sec-head .label{display:block;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:400}
+  .sec-head p{max-width:56ch;margin:14px auto 0;color:var(--ink-soft)}
+
+  /* ---------- feature ---------- */
+  .feature{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:0;
+    border:1px solid var(--rule-strong);background:var(--card);margin-bottom:28px;
+  }
+  .feature .body{padding:clamp(28px,4vw,52px)}
+  .feature .aside{background:var(--green);color:var(--green-ink);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:22px}
+  .feature .aside .label{color:rgba(246,241,230,.7)}
+  .feature h3{font-size:clamp(1.8rem,3.3vw,2.6rem);line-height:1.1;margin-top:14px}
+  .feature h3 em{color:var(--wine)}
+  .feature .sub{font-style:italic;color:var(--ink-soft);margin-top:10px;font-size:1.1rem}
+  .feature p{color:var(--ink-soft)}
+  .feature .tags{margin-top:22px;font-family:var(--label);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+  .feature .links{display:flex;gap:24px;flex-wrap:wrap;margin-top:26px}
+  .textlink{font-family:var(--label);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--wine);border-bottom:1px solid currentColor;padding-bottom:3px}
+  .textlink:hover{color:var(--ink)}
+  .metric{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid rgba(246,241,230,.22);padding-bottom:12px}
+  .metric:last-of-type{border-bottom:none}
+  .metric span{font-size:.98rem;opacity:.85}
+  .metric b{font-family:var(--serif-display);font-weight:500;font-size:2rem;line-height:1}
+  .feature .aside .note{font-size:.88rem;font-style:italic;color:var(--green-ink);opacity:.75;margin:0}
+  .ledger{width:100%;border-collapse:collapse;margin-top:6px;font-size:.92rem}
+  .ledger th{font-family:var(--label);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;text-align:left;opacity:.7;padding:0 0 8px}
+  .ledger th:not(:first-child),.ledger td:not(:first-child){text-align:right}
+  .ledger td{padding:7px 0;border-top:1px solid rgba(246,241,230,.18)}
+  .ledger td:first-child{font-style:italic}
+  @media (max-width:820px){.feature{grid-template-columns:1fr}}
+
+  /* sous nos pieds bars */
+  .bars{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+  .bar{display:grid;grid-template-columns:118px 1fr 44px;align-items:center;gap:12px;font-size:.92rem}
+  .bar .track{height:4px;background:rgba(246,241,230,.2)}
+  .bar .fill{height:100%;background:var(--brass)}
+  .bar .v{text-align:right;font-family:var(--serif-display);font-size:1.15rem}
+
+  /* ---------- catalogue ---------- */
+  .catalogue{border-top:1px solid var(--rule-strong)}
+  .lot{
+    display:grid;grid-template-columns:70px 1fr 220px;gap:28px;align-items:baseline;
+    padding:30px 0;border-bottom:1px solid var(--rule);
+  }
+  .lot .no{font-family:var(--serif-display);font-style:italic;font-size:1.5rem;color:var(--brass)}
+  .lot h3{font-size:1.6rem;line-height:1.15}
+  .lot p{margin:8px 0 0;color:var(--ink-soft);max-width:60ch}
+  .lot .meta{font-family:var(--label);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);line-height:2;text-align:right}
+  @media (max-width:760px){
+    .lot{grid-template-columns:44px 1fr;gap:16px}
+    .lot .meta{grid-column:2;text-align:left}
+  }
+
+  /* ---------- about ---------- */
+  .about{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:start}
+  .about .prose p{margin:0 0 18px;color:var(--ink-soft)}
+  .about .prose p:first-child::first-letter{
+    font-family:var(--serif-display);float:left;font-size:4.4rem;line-height:.82;
+    padding:6px 10px 0 0;color:var(--green);
+  }
+  .skills{border:1px solid var(--rule-strong);padding:30px;background:var(--card)}
+  .skills h3{font-size:1.4rem;font-style:italic;margin-bottom:6px}
+  .skills dl{margin:0}
+  .skills dt{font-family:var(--label);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-top:18px}
+  .skills dd{margin:4px 0 0}
+  @media (max-width:820px){.about{grid-template-columns:1fr;gap:40px}}
+
+  /* ---------- journey ---------- */
+  .journey{max-width:820px;margin:0 auto;border-top:1px solid var(--rule-strong)}
+  .step{display:grid;grid-template-columns:150px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--rule)}
+  .step .when{font-family:var(--serif-display);font-style:italic;font-size:1.3rem;color:var(--brass)}
+  .step h3{font-size:1.45rem}
+  .step .where{font-family:var(--label);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);margin-top:4px}
+  .step p{margin:10px 0 0;color:var(--ink-soft)}
+  @media (max-width:600px){.step{grid-template-columns:1fr;gap:6px}}
+
+  /* ---------- contact ---------- */
+  .contact{
+    background:var(--green);color:var(--green-ink);text-align:center;
+    padding:clamp(48px,8vw,96px) 24px;margin-bottom:28px;position:relative;
+  }
+  .contact::before{content:"";position:absolute;inset:12px;border:1px solid rgba(246,241,230,.28);pointer-events:none}
+  .contact .label{color:rgba(246,241,230,.7)}
+  .contact h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:400;margin-top:16px}
+  .contact p{max-width:52ch;margin:16px auto 0;opacity:.85}
+  .contact .ornament{color:var(--brass)}
+  .contact .links{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:8px}
+  .contact .links a{font-family:var(--label);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(246,241,230,.5);padding-bottom:4px}
+  .contact .links a:hover{border-color:var(--green-ink)}
+  footer{max-width:1080px;margin:0 auto;padding:10px 0 40px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="crest" href="#top" aria-label="Asma Ammouri, back to top">
+    <span class="monogram">AA</span>
+    <span class="name">Asma Ammouri</span>
+  </a>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+
+  <section class="hero" style="margin-bottom:0">
+    <span class="label">Data Scientist &amp; Data Analyst &nbsp;·&nbsp; Geospatial · Climate · Natural risk</span>
+    <h1>Thirteen years reading risk in rock.<br><em>Now I read it in data.</em></h1>
+    <div class="ornament" aria-hidden="true"><span>✦</span></div>
+    <p class="lede">Geological engineer turned data scientist. I build explainable models and clear dashboards on geospatial and environmental data — Python, SQL, machine learning, Power&nbsp;BI — with the rigour of someone who has spent a career on the ground.</p>
+    <div class="cta">
+      <a class="btn solid" href="#work">View the work</a>
+      <a class="btn" href="https://www.linkedin.com/in/asma-ammouri" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Asma-Iam" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <div class="particulars" style="margin-top:80px">
+    <div><b class="num">13+</b><span>Years in geoscience &amp; risk</span></div>
+    <div><b class="num">34,746</b><span>Communes modelled</span></div>
+    <div><b class="num">246K</b><span>CatNat decrees analysed</span></div>
+    <div><b class="num">10</b><span>Projects, end to end</span></div>
+  </div>
+
+  <!-- ============ WORK ============ -->
+  <section id="work">
+    <div class="sec-head">
+      <span class="label">Selected work</span>
+      <h2>The <em>portfolio</em></h2>
+      <p>Two flagship projects on natural risk in France, followed by a catalogue of studies in analytics and machine learning.</p>
+    </div>
+
+    <!-- HydraXAI -->
+    <article class="feature">
+      <div class="body">
+        <span class="label">No. I &nbsp;·&nbsp; Personal project &nbsp;·&nbsp; 2026</span>
+        <h3>HydraXAI France</h3>
+        <p class="sub">An explainable flood-risk map for every commune in mainland France.</p>
+        <p>Which communes are repeatedly declared flood disasters, and why? I joined official CatNat decrees with Météo-France soil moisture and daily rainfall (1982–2025) and IGN elevation data, then trained an XGBoost model validated by department, so it is always tested on territory it has never seen. Probabilities are calibrated, and every prediction is explained with SHAP, commune by commune, in a public Streamlit app.</p>
+        <p class="tags">Python · BigQuery · GeoPandas · XGBoost · SHAP · Streamlit</p>
+        <div class="links">
+          <a class="textlink" href="https://hydraxai-france.streamlit.app" target="_blank" rel="noopener">Open the live app</a>
+          <a class="textlink" href="https://github.com/Asma-Iam/hydraxai-france" target="_blank" rel="noopener">Read the code</a>
+        </div>
+      </div>
+      <div class="aside">
+        <span class="label">Spatial validation · out of sample</span>
+        <div class="metric"><span>ROC-AUC</span><b class="num">0.730</b></div>
+        <div class="metric"><span>PR-AUC <em>(random: 0.22)</em></span><b class="num">0.478</b></div>
+        <div class="metric"><span>Brier score <em>(random: 0.172)</em></span><b class="num">0.148</b></div>
+        <table class="ledger">
+          <thead><tr><th>Version</th><th>ROC-AUC</th><th>PR-AUC</th></tr></thead>
+          <tbody>
+            <tr><td>v1 · soil &amp; relief</td><td class="num">0.717</td><td class="num">0.462</td></tr>
+            <tr><td>v2 · + extreme rain</td><td class="num">0.731</td><td class="num">0.496</td></tr>
+            <tr><td>v3 · revised target</td><td class="num">0.730</td><td class="num">0.478</td></tr>
+          </tbody>
+        </table>
+        <p class="note">v3 uses a corrected target (deduplicated decrees, merged communes), so its PR-AUC is not directly comparable with v2.</p>
+      </div>
+    </article>
+
+    <!-- Sous Nos Pieds -->
+    <article class="feature">
+      <div class="body">
+        <span class="label">No. II &nbsp;·&nbsp; Le Wagon final project · team &nbsp;·&nbsp; 2026</span>
+        <h3>Sous Nos Pieds</h3>
+        <p class="sub">Mapping the natural disasters that cost France dearly.</p>
+        <p>More than forty years of officially recognised natural disasters (GASPAR CatNat, 1982–2025), cleaned in BigQuery and combined with the Géorisques API, with a machine-learning model projecting drought risk by department through 2036.</p>
+        <p class="tags">Python · SQL · BigQuery · Machine learning · Looker Studio</p>
+        <div class="links">
+          <a class="textlink" href="https://datastudio.google.com/reporting/71e3766c-6add-4840-bf65-90b02fb32433/page/p_iftjs0hw6d" target="_blank" rel="noopener">Open the dashboard</a>
+        </div>
+      </div>
+      <div class="aside">
+        <span class="label">CatNat decrees by peril, 1982–2025</span>
+        <div class="bars">
+          <div class="bar"><span>Floods</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="v num">23K</span></div>
+          <div class="bar"><span>Cyclonic winds</span><div class="track"><div class="fill" style="width:61%"></div></div><span class="v num">14K</span></div>
+          <div class="bar"><span>Land movements</span><div class="track"><div class="fill" style="width:13%"></div></div><span class="v num">3K</span></div>
+          <div class="bar"><span>Droughts</span><div class="track"><div class="fill" style="width:9%"></div></div><span class="v num">2K</span></div>
+        </div>
+        <div class="metric" style="margin-top:8px"><span>Total cost of claims</span><b class="num">€66bn</b></div>
+        <div class="metric"><span>Projected drought cost, 2036</span><b class="num">€1.4bn<small style="font-size:.9rem">/yr</small></b></div>
+      </div>
+    </article>
+
+    <!-- Catalogue -->
+    <div class="catalogue" style="margin-top:72px">
+      <div class="lot">
+        <span class="no">III</span>
+        <div><h3>Global Earthquake Risk</h3><p>2,791 earthquakes of magnitude 5.5 and above (2020–2026) pulled from the USGS API: cleaning, descriptive statistics, a world map of events and a first regression model.</p></div>
+        <div class="meta">Personal project<br>Python · API · Plotly</div>
+      </div>
+      <div class="lot">
+        <span class="no">IV</span>
+        <div><h3>Olist — Customer Analysis</h3><p>Data-quality checks, high / medium / low value segmentation, customer lifetime value, average order value and repeat-purchase rate on a Brazilian e-commerce dataset.</p></div>
+        <div class="meta">Advanced SQL<br>BigQuery · CTEs · Window functions</div>
+      </div>
+      <div class="lot">
+        <span class="no">V</span>
+        <div><h3>theLook — Logistics &amp; Operations</h3><p>Order status and delivery times across 10 US distribution centres and 14 countries: 12.98&nbsp;h average preparation, 73.28&nbsp;h from order to delivery.</p></div>
+        <div class="meta">Power BI<br>BigQuery</div>
+      </div>
+      <div class="lot">
+        <span class="no">VI</span>
+        <div><h3>Greenweez — Customer Retention</h3><p>The effect of COVID-19 on an organic e-commerce grocer: revenue trends, new-customer acquisition, cohorts and a retention matrix.</p></div>
+        <div class="meta">SQL · Python<br>Plotly</div>
+      </div>
+      <div class="lot">
+        <span class="no">VII</span>
+        <div><h3>Airbnb — Host Performance</h3><p>An eight-page dashboard for a Customer Success team explaining why some hosts rent more than others: room type, response time, reviews, price and availability.</p></div>
+        <div class="meta">Team project<br>SQL · Looker Studio</div>
+      </div>
+      <div class="lot">
+        <span class="no">VIII</span>
+        <div><h3>Spotify — Track Clustering</h3><p>Songs grouped by audio features with K-Means and DBSCAN, the elbow method to choose the number of clusters, then turned into daily-mix playlists.</p></div>
+        <div class="meta">Unsupervised ML<br>Python · scikit-learn</div>
+      </div>
+      <div class="lot">
+        <span class="no">IX</span>
+        <div><h3>Titanic — Survival Prediction</h3><p>A logistic-regression classifier: preprocessing, train / test split, scaling and evaluation.</p></div>
+        <div class="meta">Classification<br>Python · scikit-learn</div>
+      </div>
+      <div class="lot">
+        <span class="no">X</span>
+        <div><h3>World Population</h3><p>An interactive breakdown of population by region and country, with drill-down and labels in millions.</p></div>
+        <div class="meta">Power BI</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="sec-head">
+      <span class="label">About</span>
+      <h2>Same rigour, <em>new material</em></h2>
+    </div>
+    <div class="about">
+      <div class="prose">
+        <p>For more than thirteen years I worked as a geological and geotechnical engineer in France and Algeria: contaminated sites and soils, environmental risk assessments, GIS mapping and seismic hazard studies, first in industry and then as an independent consultant.</p>
+        <p>That work was already about data: reading risk from incomplete measurements, mapping it, and explaining it to people who must make a decision. I completed Le Wagon's intensive data programme, a French state-certified qualification in AI and big data (level 6), to do this with modern tools.</p>
+        <p>Today I build end-to-end projects on geospatial and environmental data, and work as a freelance data analyst. I am looking for Data Scientist and Data Analyst roles, ideally on climate, energy or natural risk, in France or abroad.</p>
+      </div>
+      <aside class="skills">
+        <h3>Toolkit</h3>
+        <dl>
+          <dt>Languages</dt><dd>Python, SQL</dd>
+          <dt>Machine learning</dt><dd>scikit-learn, XGBoost, SHAP, deep learning; spatial cross-validation</dd>
+          <dt>Data &amp; cloud</dt><dd>BigQuery, dbt, PySpark, APIs, web scraping, Git</dd>
+          <dt>Geospatial</dt><dd>GeoPandas, QGIS, ArcGIS, risk mapping</dd>
+          <dt>Visualisation</dt><dd>Power BI, Looker Studio, Tableau, Plotly, Streamlit</dd>
+          <dt>Languages spoken</dt><dd>French (native), English (C2)</dd>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ JOURNEY ============ -->
+  <section id="journey">
+    <div class="sec-head">
+      <span class="label">Journey</span>
+      <h2>Two careers, <em>one throughline</em></h2>
+    </div>
+    <div class="journey">
+      <div class="step">
+        <div class="when">2026 —</div>
+        <div><h3>Freelance Data Analyst</h3><div class="where">Independent · France</div><p>Data projects alongside the HydraXAI France portfolio project.</p></div>
+      </div>
+      <div class="step">
+        <div class="when">2026</div>
+        <div><h3>Le Wagon — Data programme</h3><div class="where">State-certified, AI &amp; big data · level 6</div><p>Python, SQL, machine learning, Power BI and Looker Studio, closing with the <em>Sous Nos Pieds</em> project.</p></div>
+      </div>
+      <div class="step">
+        <div class="when">2018 — 2026</div>
+        <div><h3>Independent Consultant, Geology &amp; Geotechnics</h3><div class="where">France</div><p>Contaminated sites and soils, environmental and regulatory studies, GIS risk mapping and team coordination for engineering firms and public clients.</p></div>
+      </div>
+      <div class="step">
+        <div class="when">Earlier</div>
+        <div><h3>Geological &amp; Geotechnical Engineer</h3><div class="where">Algeria &amp; France</div><p>Drilling supervision and environmental diagnostics at Sonatrach, contaminated-site engineering at STARR, seismic risk studies at CRAAG.</p></div>
+      </div>
+      <div class="step">
+        <div class="when">Education</div>
+        <div><h3>Two Master's degrees in Earth Sciences</h3><div class="where">University of Lille · University of Tlemcen</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <span class="label">Correspondence</span>
+    <h2>Let us <em>talk</em></h2>
+    <p>Data Scientist and Data Analyst roles, remote, hybrid or on site, in France and beyond.</p>
+    <div class="ornament" aria-hidden="true"><span>✦</span></div>
+    <div class="links">
+      <a href="mailto:asmaammouri1@gmail.com">asmaammouri1@gmail.com</a>
+      <a href="https://www.linkedin.com/in/asma-ammouri" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Asma-Iam" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span class="label">Asma Ammouri · Paris &amp; Lyon</span>
+  <span class="label">Updated October 2026</span>
+</footer>
+
+</body>
+</html>
